@@ -1,46 +1,108 @@
-# Let's generate a README.md text directly tailored to the notebook's code content
-# by extracting the main logic and purpose of the notebook.
+Kendi Nyaga - 807
 
-readme_content = """# Data Warehouse Project
+Data Warehouse Project
 
-## 📌 Overview
-This Jupyter Notebook demonstrates how to create a **simple data warehouse** using **Python, SQLite, and Pandas**.  
-It walks through connecting to a database, creating tables from DataFrames, inserting/fetching data, running basic analysis, and visualizing results.
+📌 Project Overview
 
----
+This project demonstrates the process of building a **basic data warehouse system** using **Python, Pandas, and SQLite**.
+The goal is to showcase the key concepts of data warehousing, including:
 
-## ⚙️ Technologies Used
-- **Python 3**
-- **SQLite3** (database engine)
-- **Pandas** (data manipulation)
-- **Matplotlib** & **Seaborn** (data visualization)
-- **NumPy** (numerical operations)
-- **Datetime** (handling dates)
+* Storing structured data in a relational database (SQLite).
+* Extracting and transforming data using Python and Pandas.
+* Loading data into database tables.
+* Performing exploratory data analysis (EDA).
+* Visualizing trends using Matplotlib and Seaborn.
 
----
+This notebook acts as a simple prototype for understanding **ETL (Extract, Transform, Load) processes** in a data warehouse environment.
 
-## 🚀 Features
-- Establish SQLite database connection
-- Execute and fetch SQL queries
-- Create tables directly from Pandas DataFrames
-- Perform **basic data analysis**:
-  - Head, Info, Description, Missing values check
-- Generate visualizations:
-  - Bar, Line, and Scatter plots
+ 🎯 Learning Objectives
 
----
+By the end of this project, you should be able to:
 
-## 📂 Example Workflow
-1. Define a sample dataset (`employees`) with attributes like `id`, `name`, `age`, and `salary`.
-2. Create a SQLite database (`data_warehouse.db`) and load the DataFrame into a table.
-3. Run queries to fetch stored records.
-4. Perform exploratory analysis on the dataset.
-5. Visualize salaries by employee using bar charts.
+1. Understand how a data warehouse can be created with lightweight tools.
+2. Establish a connection to a relational database using Python.
+3. Store and retrieve tabular data in SQL tables.
+4. Perform descriptive analysis and identify missing values.
+5. Visualize data to derive insights.
 
----
+ ⚙️ Tools & Libraries
 
-## 🛠️ How to Run
-1. Clone/download this repository.
-2. Install required dependencies:
+* **Python 3.10+**
+* **SQLite3** – lightweight relational database used as the warehouse.
+* **Pandas** – for handling structured datasets and transforming them.
+* **Matplotlib & Seaborn** – for data visualization.
+* **NumPy** – numerical computing.
+* **Datetime** – working with timestamps.
+
+ 🗂️ Project Structure
+
+```
+Data warehouse.ipynb   # Main Jupyter Notebook (contains all code and analysis)
+data_warehouse.db      # SQLite database file generated during execution
+README.md              # Documentation file (this file)
+```
+ 🛠️ Installation & Setup
+
+1. Install required libraries:
+
    ```bash
    pip install pandas matplotlib seaborn numpy
+   ```
+
+2. Open the Jupyter Notebook:
+
+   ```bash
+   jupyter notebook "Data warehouse.ipynb"
+   ```
+
+3. Run the notebook cells step by step.
+
+ 🔄 Workflow Description
+
+1. **Database Setup**
+
+   * Connect to SQLite (`data_warehouse.db`).
+   * Create helper functions for executing queries and fetching data.
+
+2. **Data Preparation**
+
+   * Build a sample employee dataset with columns:
+
+     * `id` (unique identifier)
+     * `name` (employee name)
+     * `age` (employee age)
+     * `salary` (monthly salary)
+   * Load the dataset into the warehouse as the `employees` table.
+
+3. **Exploratory Data Analysis**
+
+   * Use Pandas to display dataset head, summary statistics, and missing values.
+   * Provide insights about the dataset.
+
+4. **Visualization**
+
+   * Generate bar charts to show employee salary distribution.
+   * Other options: line plots or scatter plots for comparisons.
+
+ 📊 Sample Output
+
+Example results from running the notebook:
+
+* **Database Table:**
+
+  ```
+  (1, 'Alice', 24, 50000)
+  (2, 'Bob', 30, 60000)
+  (3, 'Charlie', 22, 55000)
+  (4, 'David', 35, 70000)
+  (5, 'Eva', 28, 65000)
+  ```
+
+* **Summary Statistics:**
+
+  ```
+  count       5.000000
+  mean       28.000000
+  std         4.690416
+  min        22.000000
+  max        35.000000
